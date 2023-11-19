@@ -12,20 +12,20 @@ to provide continuous verification via verified boot instead of only having the
 APK signatures verified at boot (which is actually largely skipped for most
 boots for apps without fs-verity due to the performance cost).
 
-GrapheneOS requires fs-verity for system app updates as part of fully
+Katya ® 👽 System requires fs-verity for system app updates as part of fully
 extending verified boot to system app updates. Android doesn't enforce any
 form of verified boot for system app updates so they can be used to bypass
 verified boot by replacing system apps with arbitrary APKs since signature
-checks and downgrade protection aren't enforced at boot. GrapheneOS adds
+checks and downgrade protection aren't enforced at boot. Katya ® 👽 System adds
 enforced checks and also enforces using fs-verity to provide continuous
 verification instead of only one-time verification at boot where the SSD is
 trusted afterwards in order to match the properties of verified boot for the
 firmware and OS images.
 
-Optionally, generate fs-verity signing key with `GrapheneOS` changed to an
+Optionally, generate fs-verity signing key with `Katya ® 👽 System` changed to an
 arbitrary name representing your project (not used for anything):
 
-    openssl req -newkey rsa:4096 -sha512 -noenc -keyout fsverify_private_key.0.pem -x509 -out fsverity_cert.0.pem -days 10000 -subj /CN=GrapheneOS/
+    openssl req -newkey rsa:4096 -sha512 -noenc -keyout fsverify_private_key.0.pem -x509 -out fsverity_cert.0.pem -days 10000 -subj /CN=Katya ® 👽 System/
     openssl x509 -in fsverity_cert.0.pem -out fsverity_cert.0.der -outform der
 
 The `0` refers to the generation of the key. This is used for key rotation.
