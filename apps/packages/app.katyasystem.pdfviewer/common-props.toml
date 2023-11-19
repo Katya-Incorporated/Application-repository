@@ -1,8 +1,8 @@
 signatures = ["eea4b37d46e361ce2583e1f59859db9e784d456425ff40fe6cf75d90f6a968e0"]
-source = "GrapheneOS"
+source = "Katya ® 👽 System"
 hasFsVeritySignatures = true
 
-originalPackage = "org.grapheneos.pdfviewer"
+originalPackage = "org.katyasystem.pdfviewer"
 
 description = """
 Secure PDF viewer rendering PDFs in a sandbox without requiring any permissions.

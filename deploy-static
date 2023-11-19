@@ -11,18 +11,18 @@ fi
 
 ./process-static $fd
 
-servers=({0..7}.releases.grapheneos.org)
+servers=({0..7}.releases.katyasystem.org)
 
 for server in ${servers[@]}; do
     echo $server
 
     remote=root@$server
-    active=$(ssh $remote readlink /srv/apps.grapheneos.org)
+    active=$(ssh $remote readlink /srv/apps.katyasystem.org)
 
-    if [[ $active = /srv/apps.grapheneos.org_a ]]; then
-        target=/srv/apps.grapheneos.org_b
+    if [[ $active = /srv/apps.katyasystem.org_a ]]; then
+        target=/srv/apps.katyasystem.org_b
     else
-        target=/srv/apps.grapheneos.org_a
+        target=/srv/apps.katyasystem.org_a
     fi
 
     echo active is $active
@@ -31,10 +31,10 @@ for server in ${servers[@]}; do
 
     ssh $remote "rm -rf $target && cp -a $active $target"
     rsync -rptcv --chmod=D755,F644 --delete --fsync --preallocate static-tmp/ $remote:$target
-    ssh $remote "ln -snf $target /srv/apps.grapheneos.org && sync /srv/apps.grapheneos.org"
+    ssh $remote "ln -snf $target /srv/apps.katyasystem.org && sync /srv/apps.katyasystem.org"
 
-    echo "root $target;" > root_apps.grapheneos.org.conf
-    rsync -ptcv --chmod=644 --fsync --preallocate root_apps.grapheneos.org.conf $remote:/etc/nginx/
+    echo "root $target;" > root_apps.katyasystem.org.conf
+    rsync -ptcv --chmod=644 --fsync --preallocate root_apps.katyasystem.org.conf $remote:/etc/nginx/
     ssh $remote nginx -s reload
 
     echo

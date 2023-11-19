@@ -1,16 +1,16 @@
 signatures = ["6ebb65c5daa95641f7a774ea35d26ff251575cb32e34a8a5d655b2742b57321f"]
-source = "GrapheneOS"
+source = "Katya ® 👽 System"
 hasFsVeritySignatures = true
 
 isTopLevel = false
 
 noCode = true
-packagesAllowedToTriggerUpdate = ["app.grapheneos.gmscompat"]
+packagesAllowedToTriggerUpdate = ["app.katyasystem.gmscompat"]
 
-staticDeps = ["app.grapheneos.gmscompat >= 1000"]
+staticDeps = ["app.katyasystem.gmscompat >= 1000"]
 
 description = """
 GmsCompatConfig is a configuration file for the sandboxed Google Play compatibility layer.
 
-Sandboxed Google Play compatibility layer (GmsCompat) and GmsCompatConfig are parts of GrapheneOS.
+Sandboxed Google Play compatibility layer (GmsCompat) and GmsCompatConfig are parts of Katya ® 👽 System.
 """
